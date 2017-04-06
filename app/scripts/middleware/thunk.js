@@ -5,4 +5,4 @@ const thunk = ({ dispatch, getState }) => next => action => {
     return next(action);
 };
 
-export default thunk
+export default thunk;

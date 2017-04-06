@@ -1,0 +1,17 @@
+
+.app-header {
+  border-bottom: 1px solid #ccc;
+  @include clearfix;
+
+  .app-logo {
+    float: left;
+    font-size: 2rem;
+  }
+  .username {
+    float: right;
+    font-size: 1.4rem;
+  }
+  .main-nav {
+
+  }
+}

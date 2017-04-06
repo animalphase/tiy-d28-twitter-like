@@ -9,12 +9,12 @@ export default function exampleAsyncAction () {
       url: "SOME_URL",
       headers: {
         "SOME_ID": "BLAH"
-      }
+      },
       data: {
       }
     }).then(function (response) {
       //After the ajax call dispatch any needed actions
       dispatch( { type: "ENDING_EXAMPLE_ASYNC" });
-    })
-  }
+    });
+  };
 }
