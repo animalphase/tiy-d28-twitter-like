@@ -1,0 +1,50 @@
+/*
+
+#F7F4FF
+#ECF4FF
+#DBF3FE
+
+#FFF4FF
+#FFECFE
+#F2D2FC
+#ECC6F0
+#E7BEEA
+#C893C9
+#7D73D4
+
+#FED2FD
+#F7BDF8
+#DCE7FF
+#C1D1F0
+
+*/
+
+
+// colors
+$color-white-pure: #fff;
+
+$color-white-pink: #FFF4FF;
+$color-fill-pink: #FED2FD;
+$color-borders-pink: #F7BDF8;
+
+$color-white-blue: #F7F4FF;
+$color-fill-blue: #DCE7FF;
+$color-borders-blue: #C1D1F0;
+
+$color-link: #7D73D4;
+$color-link-hover: #7863a4;
+
+$color-light: #ebe8ee;
+$color-dark: #49484b;
+
+/* TODO: Shadow blend color to mix on everything with drop shadow */
+// $color-shadow-blend: #000;
+
+
+// measurements
+$radius-standard: .3rem;
+
+
+// other properties
+$speed-transition-standard: .35s;
+$speed-transition-hover: .1s;

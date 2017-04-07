@@ -4,7 +4,10 @@ export default function headerView(store) {
   //Create the HTML
   let $html = $(` <header class="app-header">
                     <h1 class="app-logo">bip</h1>
-                    <div class="username">${store.getState().session.displayName}</div>
+                    <div class="user">
+                      <span class="display-name">${state.session.user.displayName}</span>
+                      <div class="nav-avatar"><img src="${state.session.user.avatar}"></div>
+                    </div>
                     <nav class="main-nav"></nav>
                   </header>`);
 

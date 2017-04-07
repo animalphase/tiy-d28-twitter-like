@@ -8,14 +8,17 @@ html {
 
 body {
   font-size: 1.6rem; /* 16px equivalent */
+  color: $color-dark;
 }
 
 a {
-  transition: .35s ease all;
+  transition: $speed-transition-standard ease all;
   text-decoration: none;
+  color: $color-link;
 
   &:hover {
-    transition: .1s ease all;
+    transition: $speed-transition-hover ease all;
+    color: $color-link-hover;
   }
 }
 
@@ -30,18 +33,23 @@ a {
 
 button {
   appearance: none;
-  border: none;
-  background: #eee;
-  border-radius: .3rem;
+  border-radius: $radius-standard;
   padding: .9rem 1.3rem;
   cursor: pointer;
-  transition: .35s ease all;
-  box-shadow: 0 .2rem 0 0 #ccc;
+  transition: $speed-transition-standard ease all;
+  color: #9eafd2;
+  background: $color-fill-blue;
+  border: 1px solid $color-borders-blue;
+  box-shadow: 0 .2rem 0 0 $color-borders-blue;
+
 
   &:hover {
-    transition: .1s ease all;
-    background: #ddd;
-    box-shadow: 0 .2rem 0 0 #aaa;
+    /* TODO: install bourbon and shade the buttons down on hover */
+    transition: $speed-transition-hover ease all;
+    color: #8797b9;
+    background: $color-borders-blue;
+    border-color: #b6c6e6;
+    box-shadow: 0 .2rem 0 0 #b6c6e6;
   }
 
   &:disabled {

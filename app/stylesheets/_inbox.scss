@@ -1,17 +1,46 @@
 
 .app-header {
   border-bottom: 1px solid #ccc;
+  padding: 1rem;
   @include clearfix;
 
   .app-logo {
     float: left;
     font-size: 2rem;
   }
-  .username {
+  
+  .user {
     float: right;
-    font-size: 1.4rem;
+    text-align: right;
   }
+
   .main-nav {
 
+  }
+
+  .app-logo {
+    display: inline-block;
+    margin: 0;
+    height: 4rem;
+    line-height: 4rem;
+    vertical-align: middle;
+  }
+
+  .display-name {
+    font-size: 1.4rem;
+    display: inline-block;
+  }
+
+  .nav-avatar {
+    width: 3.5rem;
+    border-radius: 20rem;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
 }

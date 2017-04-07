@@ -1,3 +1,5 @@
+const url = '';
+
 export default function exampleAsyncAction () {
   //All async action creators should return a function that takes 'dispatch' as its argument
   return function (dispatch) {
