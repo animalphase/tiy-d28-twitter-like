@@ -1,6 +1,6 @@
 
 .app-header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $color-light;
   padding: 1rem;
   @include clearfix;
 
@@ -8,7 +8,7 @@
     float: left;
     font-size: 2rem;
   }
-  
+
   .user {
     float: right;
     text-align: right;
@@ -42,5 +42,44 @@
       display: block;
       width: 100%;
     }
+  }
+}
+
+
+
+.form-signin {
+
+  input, button {
+    display: block;
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+
+
+.form-new-post{
+  display: flex;
+  padding: 2rem 0;
+
+}
+.input-new-post{
+  display: block;
+  flex: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-new-post{
+  width: 4.5rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: none;
+  margin-left: -.1rem;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  &:focus {
+    color: #ea8cec;
   }
 }

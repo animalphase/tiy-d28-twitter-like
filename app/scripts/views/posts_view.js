@@ -4,20 +4,26 @@ export default function postsView(store) {
   let state = store.getState();
 
   //Create the HTML
-  let $html = $(` <section class="page-wrapper chat-view">
-                    <div class="view-content"><h2>chat view</h2></div>
-                    <a href="#">test-link</a>
-                    <button>test-button</button>
-                  </section>`);
+  let $viewHtml = $(` <section class="page-wrapper chat-view"></section>`);
 
-  $html.prepend(headerView(store));
+  $viewHtml.prepend(headerView(store));
+
+  let $contentWrapper = $('<div class="view-content">');
+  $viewHtml.append($contentWrapper);
+
+  let $postForm = $(` <form class="form-new-post">
+                        <input class="input-new-post" type="text" name="new post" placeholder="new post…">
+                        <button class="btn btn-new-post" type="submit" name="new post button">+</button>
+                      </form>`);
+  $contentWrapper.append($postForm);
+
 
 
   //Assign any event listeners
-  $($html).find('h2').on('click', () => {
+  $($viewHtml).find('h2').on('click', () => {
     store.dispatch(exampledsAsyncAction());
   });
 
   //Return the html
-  return $html;
+  return $viewHtml;
 }

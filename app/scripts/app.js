@@ -5,6 +5,7 @@ import logger from './middleware/logger.js';
 import User from './models/user_model.js';
 
 import exampleView from './views/example_view.js';
+import signinView from './views/signin_view.js';
 import postsView from './views/posts_view.js';
 
 export default function app() {
@@ -22,7 +23,7 @@ export default function app() {
         user: testUser,
         authToken: ''
       },
-      view: postsView
+      view: signinView
     };
 
     const reducer = function (currentState, action) {
