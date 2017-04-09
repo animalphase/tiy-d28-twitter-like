@@ -16,6 +16,6 @@ export default function headerView(store) {
     store.dispatch(exampledsAsyncAction());
   });
 
-  //Return the html
+  // return html of view
   return $html;
 }

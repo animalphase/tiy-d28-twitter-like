@@ -1,7 +1,7 @@
 export default function User (attributes) {
-  this.id = '';
+  this.id = attributes.id;
   this.userName = attributes.userName;
-  this.displayName = attributes.displayName || "No Name Given";
-  this.bio = '';
-  this.avatar = attributes.avatar;
+  this.displayName = attributes.displayName || '';
+  this.bio = attributes.bio || '';
+  this.avatar = attributes.avatar || '';
 }

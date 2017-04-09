@@ -60,6 +60,12 @@ button {
     box-shadow: 0 .2rem 0 0 #b6c6e6;
   }
 
+  &:focus {
+    color: #ea8cec;
+    background: $color-white-pink;
+    box-shadow: 0 .2rem 0 0 $color-borders-pink;
+  }
+
   &:disabled {
     color: #bbb;
     background: #f0f0f0;

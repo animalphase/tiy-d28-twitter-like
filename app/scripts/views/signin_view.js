@@ -19,13 +19,15 @@ export default function signinView(store) {
                       </form>`);
   $contentWrapper.append($postForm);
 
-
-
-  //Assign any event listeners
-  $($viewHtml).find('h2').on('click', () => {
-    store.dispatch(exampledsAsyncAction());
+  $postForm.on('click', (e) => {
+    e.preventDefault();
+    store.dispatch({
+      type: 'SIGNIN',
+      login : 'ripley@example.com',
+      password : 'password'
+    });
   });
 
-  //Return the html
+  // return html of view
   return $viewHtml;
 }

@@ -9,6 +9,6 @@ export default function exampleView(store) {
     store.dispatch(exampledsAsyncAction());
   });
 
-  //Return the html
+  // return html of view
   return $html;
 }
