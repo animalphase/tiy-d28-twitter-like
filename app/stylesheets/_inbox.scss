@@ -79,3 +79,41 @@
     box-shadow: none;
   }
 }
+
+
+
+.post {
+  padding: 2rem 0;
+  @include clearfix;
+  border-top: .1rem solid $color-light;
+}
+
+.author-avatar {
+  width: 4rem;
+  border-radius: 200rem;
+  overflow: hidden;
+  float: left;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.post-block {
+  margin-left: 5rem;
+}
+
+.post-meta {
+  font-size: 1.4rem;
+}
+.author-display-name {
+  font-weight: bold;
+}
+.author-user-name {
+  color: $color-light
+}
+
+.post-body {
+  margin: 0;
+}

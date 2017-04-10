@@ -21,7 +21,6 @@ export default function postsView(store) {
   let $postWrapper = $('<section class="posts-wrapper"><h3>all posts</h3></section>');
   console.log('postView > posts in state', store.getState().posts);
   store.getState().posts.forEach( (post) => {
-    console.log(posts);
     $postWrapper.append(new postView(store, post));
   });
 

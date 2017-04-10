@@ -1,5 +1,8 @@
 export default function Post (attributes) {
-  this.author = attributes.author;
-  this.body = attributes.body;
-  this.timePosted = new Date(attributes.timePosted);
+  this.authorId =           attributes.authorId;
+  this.authorUserName =     attributes.authorUserName;
+  this.authorDisplayName =  attributes.authorDisplayName || '';
+  this.authorAvatar =       attributes.authorAvatar || '';
+  this.body =               attributes.body;
+  this.timePosted =         new Date(attributes.timePosted);
 }

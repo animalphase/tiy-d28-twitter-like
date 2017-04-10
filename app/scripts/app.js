@@ -37,7 +37,8 @@ export default function app() {
         userToken: ''
       },
       view: signinView,
-      posts: []
+      posts: [],
+      users: []
     };
 
     // TODO: split actions into the separate module fuctions
@@ -117,9 +118,12 @@ export default function app() {
               let postObjects = postsData.data.map( (post) => {
                 console.log(post);
                 return new Post({
-                  author: post.author,
-                  body: post.body,
-                  timePosted: post.created
+                  authorId:           post.authorId,
+                  authorUserName:     post.authorUserName,
+                  authorDisplayName:  post.authorDisplayName,
+                  authorAvatar:       post.authorAvatar,
+                  body:               post.body,
+                  timePosted:         post.created
                 });
               });
               console.log('>> put into Post objects: ', postObjects);
