@@ -1,4 +1,5 @@
 import headerView from './header_view.js';
+import postView from './post_view.js';
 
 export default function postsView(store) {
   let state = store.getState();
@@ -17,12 +18,15 @@ export default function postsView(store) {
                       </form>`);
   $contentWrapper.append($postForm);
 
-
-
-  //Assign any event listeners
-  $($viewHtml).find('h2').on('click', () => {
-    store.dispatch(exampledsAsyncAction());
+  let $postWrapper = $('<section class="posts-wrapper"><h3>all posts</h3></section>');
+  console.log('postView > posts in state', store.getState().posts);
+  store.getState().posts.forEach( (post) => {
+    console.log(posts);
+    $postWrapper.append(new postView(store, post));
   });
+
+  $contentWrapper.append($postWrapper);
+
 
   // return html of view
   return $viewHtml;
