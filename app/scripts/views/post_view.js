@@ -28,7 +28,6 @@ export default function postsView(store, post) {
           "application-id": '5BFDD67D-CA10-A400-FFBE-1D2BCCD31700',
           "secret-key": '3F7A8F8E-5D59-F118-FFE0-2828C89C6600',
           "user-token": state.session.userToken,
-          "Content-Type": "application/json",
           "application-type": "REST"
         }
       }).then( () => {
