@@ -13,18 +13,23 @@ export default function signinView(store) {
   $viewHtml.append($contentWrapper);
 
   let $postForm = $(` <form class="form-signin">
-                        <input class="input-username" type="text" name="username" placeholder="username…">
+                        <input class="input-email" type="text" name="email" placeholder="email…">
                         <input class="input-password" type="password" name="password" placeholder="password…">
                         <button class="btn btn-signin" type="submit" name="sign in button">sign in</button>
-                      </form>`);
+                      </form>
+                      <p><br><br>
+                        <p>available users:</p>
+                        <p>ripley@example.com<br>password</p>
+                        <p>example@example.com<br>password</p>
+                      </p>`);
   $contentWrapper.append($postForm);
 
-  $postForm.on('click', (e) => {
+  $postForm.find('.btn-signin').on('click', (e) => {
     e.preventDefault();
     store.dispatch({
       type: 'SIGNIN',
-      login : 'ripley@example.com',
-      password : 'password'
+      login : $postForm.find('.input-email').val(),
+      password : $postForm.find('.input-password').val()
     });
   });
 
