@@ -21,6 +21,7 @@ export default function signinView(store) {
                         <p>available users:</p>
                         <p>ripley@example.com<br>password</p>
                         <p>example@example.com<br>password</p>
+                        <p>if you enter login information incorrectly, you will have to refresh the page</p>
                       </p>`);
   $contentWrapper.append($postForm);
 
