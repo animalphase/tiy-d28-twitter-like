@@ -1,4 +1,4 @@
-# twitter-link
+# twitter-like
 
 ## TIY Week 6, day 28
 
