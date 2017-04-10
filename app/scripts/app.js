@@ -136,12 +136,17 @@ export default function app() {
             return Object.assign({}, currentState, newState);
 
 
-          case "VIEW_POSTS":
+          case 'VIEW_POSTS':
           var newState = {
             view: postsView,
             posts: action.posts
           };
           return Object.assign({}, currentState, newState);
+
+
+          case 'NEW_POST':
+            console.log('!! POSTING !!');
+            return currentState;
 
 
           default:

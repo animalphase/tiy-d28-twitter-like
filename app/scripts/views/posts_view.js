@@ -19,12 +19,14 @@ export default function postsView(store) {
   $contentWrapper.append($postForm);
 
   let $postWrapper = $('<section class="posts-wrapper"><h3>all posts</h3></section>');
-  console.log('postView > posts in state', store.getState().posts);
   store.getState().posts.forEach( (post) => {
     $postWrapper.append(new postView(store, post));
   });
 
   $contentWrapper.append($postWrapper);
+
+
+  // TODO: add button click event to $postForm.find('.btn-new-post')
 
 
   // return html of view
