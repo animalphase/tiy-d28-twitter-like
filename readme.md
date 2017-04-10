@@ -1,4 +1,19 @@
+# twitter-link
 
-## Description
+## TIY Week 6, day 28
 
-> Describe your application here and what it does
+---
+
+**⭐️ live on surge: http://ce-d28-bip.surge.sh/ ⭐️**
+
+----
+
+### Libraries/tools used ⚒
+
+- ECMAscript 2016
+- Redux
+- jQuery
+- Sass
+- webpack
+- yarn
+- Uses Backendless for database
