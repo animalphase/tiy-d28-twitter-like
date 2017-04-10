@@ -81,7 +81,7 @@ export default function app() {
             }).then( (data, status, xhr) => {
               retrievedUserToken = data['user-token'];
               store.dispatch({
-                type: "LOAD_POSTS",
+                type: "LOAD_POSTS_SIGNING_IN",
                 user: new User({
                     id : data.objectId,
                   userName : data.userName,
@@ -96,7 +96,7 @@ export default function app() {
             return Object.assign({}, currentState, newState);
 
 
-          case "LOAD_POSTS":
+          case "LOAD_POSTS_SIGNING_IN":
             var newState = {
               session: {
                 user: action.user,
@@ -118,12 +118,48 @@ export default function app() {
               let postObjects = postsData.data.map( (post) => {
                 console.log(post);
                 return new Post({
+                  postId:             post.objectId,
                   authorId:           post.authorId,
                   authorUserName:     post.authorUserName,
                   authorDisplayName:  post.authorDisplayName,
                   authorAvatar:       post.authorAvatar,
                   body:               post.body,
                   timePosted:         post.created
+                });
+              });
+              console.log('>> put into Post objects: ', postObjects);
+              store.dispatch({
+                type: "VIEW_POSTS",
+                posts: postObjects
+              });
+            });
+
+            return Object.assign({}, currentState, newState);
+
+
+
+          case "LOAD_POSTS":
+            var newState = {
+              view: loadingPostsView
+            };
+
+            $.ajax({
+              url: urls.posts,
+              method: "GET",
+              headers: {
+                "application-id": applicationId,
+                "secret-key": secretKey,
+                "user-token": currentState.session.userToken
+              }
+            }).then( (postsData, status, xhr) => {
+              let postObjects = postsData.data.map( (post) => {
+                console.log(post);
+                return new Post({
+                  authorId:           post.authorId,
+                  authorUserName:     post.authorUserName,
+                  authorDisplayName:  post.authorDisplayName,
+                  authorAvatar:       post.authorAvatar,
+                  body:               post.body
                 });
               });
               console.log('>> put into Post objects: ', postObjects);
@@ -145,7 +181,31 @@ export default function app() {
 
 
           case 'NEW_POST':
-            console.log('!! POSTING !!');
+            console.log('!! POSTING !!', action.postInfo);
+            $.ajax({
+              url: urls.posts,
+              type: 'POST',
+              dataType: 'JSON',
+              headers: {
+                "application-id": applicationId,
+                "secret-key": secretKey,
+                "user-token": currentState.session.userToken,
+                "Content-Type": "application/json",
+                "application-type": "REST"
+              },
+              data: JSON.stringify({
+                authorId:           action.postInfo.authorId,
+                authorUserName:     action.postInfo.authorUserName,
+                authorDisplayName:  action.postInfo.authorDisplayName,
+                authorAvatar:       action.postInfo.authorAvatar,
+                body:               action.postInfo.body
+              })
+            }).then( () => {
+              store.dispatch({
+                type: "LOAD_POSTS"
+              });
+            });
+
             return currentState;
 
 

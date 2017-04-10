@@ -26,7 +26,27 @@ export default function postsView(store) {
   $contentWrapper.append($postWrapper);
 
 
-  // TODO: add button click event to $postForm.find('.btn-new-post')
+  $postForm.find('.btn-new-post').on('click', (e) => {
+    e.preventDefault();
+    let newPostBody = $postForm.find('.input-new-post').val();
+    if(newPostBody !== '' && newPostBody !== undefined) {
+      let newPostInfo = {
+        authorId:           state.session.user.id,
+        authorUserName:     state.session.user.userName,
+        authorDisplayName:  state.session.user.displayName || '',
+        authorAvatar:       state.session.user.avatar || '',
+        body:               newPostBody
+      };
+      $postForm.find('.input-new-post').val('');
+      store.dispatch({
+        type: 'NEW_POST',
+        postInfo: newPostInfo
+      });
+    } else {
+      console.log('new post field empty');
+    }
+
+  });
 
 
   // return html of view

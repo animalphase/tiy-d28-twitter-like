@@ -1,4 +1,5 @@
 export default function Post (attributes) {
+  this.postId =             attributes.postId;
   this.authorId =           attributes.authorId;
   this.authorUserName =     attributes.authorUserName;
   this.authorDisplayName =  attributes.authorDisplayName || '';

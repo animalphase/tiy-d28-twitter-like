@@ -111,13 +111,17 @@
   font-weight: bold;
 }
 .author-user-name {
-  color: $color-light
+  color: $color-medium;
+}
+.post-timestamp {
+  font-weight: 200;
+  color: $color-medium;
 }
 
 .post-body {
   margin: 0;
 }
 
-.btn-edit {
+.btn-delete {
   float: right;
 }
